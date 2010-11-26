@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+.errors { border:#FF0000 solid 1px;
+}
+-->
+</style>
+</head>
+
+<body>
+<form action="" method="post">
+<div>
+    <span>姓名：</span>
+    <input name="name" type="text" value="<{$_POST['name']}>"/>
+    <if condition="$error['name']"><span class="errors" ><{$error['name']}></span></if>
+</div>
+<div>
+    <span>学号（工号）：</span>
+    <input name="sid" type="text" value="<{$_POST['sid']}>"/>
+    <if condition="$error['sid']"><span class="errors" ><{$error['sid']}></span></if>
+</div>
+<div>
+    <span>身份证号：</span>
+    <input name="pid" type="text" value="<{$_POST['pid']}>"/>
+    <if condition="$error['pid']"><span class="errors" ><{$error['pid']}></span></if>
+    </div>
+<div>
+    <span>验证码：</span>
+    <input name="verify" type="text"/>
+    <if condition="$error['verify']"><span class="errors" ><{$error['verify']}></span></if></div></div>
+<div>
+    <if condition="$error['check']"><span class="errors" ><{$error['check']}></span></if>
+</div>
+<img src="/passport/common/verify" />
+<input name="" type="submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+--
+-- 数据库: `shine_passport`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `email_check`
+--
+
+CREATE TABLE IF NOT EXISTS `email_check` (
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `uid` int(9) NOT NULL DEFAULT '0',
+  `action` varchar(15) DEFAULT NULL,
+  `randkey` varchar(16) DEFAULT NULL,
+  `time` time NOT NULL,
+  `explain` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`email`),
+  UNIQUE KEY `uid` (`uid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `email_check`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `member`
+--
+
+CREATE TABLE IF NOT EXISTS `member` (
+  `uid` int(9) NOT NULL AUTO_INCREMENT,
+  `sid` varchar(10) ,
+  `email` varchar(64) ,
+  `password` varchar(64) ,
+  `randkey` char(3) , 
+  `petname` varchar(20) ,
+  `sex` int(1) NOT NULL DEFAULT '0',
+  `acl` int(2) NOT NULL DEFAULT '0',
+  `lastlogin` time NOT NULL,
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `petname` (`petname`),
+  KEY `sid` (`sid`),
+  KEY `email` (`email`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8  AUTO_INCREMENT=10000 ;
+
+--
+-- 转存表中的数据 `member`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `member_info`
+--
+
+CREATE TABLE IF NOT EXISTS `member_info` (
+  `uid` int(9) NOT NULL,
+  `name` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `byear` int(4) DEFAULT NULL,
+  `bmonth` int(2) DEFAULT NULL,
+  `bday` int(2) DEFAULT NULL,
+  `position` int(1) DEFAULT NULL,
+  `syear` int(4) DEFAULT NULL,
+  `college` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `subject` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `pid` varchar(32) ,
+  `registerip` varchar(40) ,
+  `registertime` time NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `member_info`
+--
+
+
